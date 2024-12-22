@@ -14,8 +14,7 @@ export default class OpenTrack {
     return 'http://w3c.github.io/opentrack-cg/contexts/opentrack.jsonld';
   }
   static getBase() {
-    //return Meteor.settings.openTrackBaseUri;
-    return "http://purl.org/athletics";
+    return Meteor.settings.openTrackBaseUri? Meteor.settings.openTrackBaseUri : "http://purl.org/athletics";
   }
   static locationToOpentrack(loc) {
     const location = { '@type': 'schema:Place' };
